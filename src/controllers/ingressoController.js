@@ -58,4 +58,17 @@ const deleteIngresso = async (req, res) => {
     }
 }
 
-module.exports = { getAllIngressos, getIngressoById, addIngresso, updateIngresso, deleteIngresso };
+const vendaIngresso = async (req, res) => {
+    try {
+        const { id, quantidade } = req.body;
+        const result = await ingressoModel.vendaIngresso(id, quantidade);
+        if (result.error) {
+            return res.status(400).json({ message: result.error });
+        }
+        res.json(result);
+    } catch (error) {
+        res.status(404).json({ message: "Erro ao vender ingresso." });
+    }
+}
+
+module.exports = { getAllIngressos, getIngressoById, addIngresso, updateIngresso, deleteIngresso, vendaIngresso };

@@ -13,21 +13,9 @@ CREATE TABLE ingressos (
 )
 
 INSERT INTO ingressos (evento, local_evento, data_evento, categoria, preco_ingresso, quantidade_disponivel) VALUES
-('ColdPlay', 'Allianz Parque', '2025-12-01', 'Pista', 500.00, 1000),
-('ColdPlay', 'Allianz Parque', '2025-12-02', 'Pista Vip', 600.00, 200),
-('ColdPlay', 'Allianz Parque', '2025-12-03', 'Camarote', 800.00, 100);
-
-INSERT INTO ingressos (evento, local_evento, data_evento, categoria, preco_ingresso, quantidade_disponivel) VALUES
-('ColdPlay', 'Allianz Parque', '2025-12-01', 'Pista', 500.00, 200);
-
-INSERT INTO ingressos (evento, local_evento, data_evento, categoria, preco_ingresso, quantidade_disponivel) VALUES
-('ColdPlay', 'Allianz Parque', '2025-12-01', 'Arquibancada', 200.00, 400);
-
-INSERT INTO ingressos (evento, local_evento, data_evento, categoria, preco_ingresso, quantidade_disponivel) VALUES
-('ColdPlay', 'Allianz Parque', '2025-12-01', 'Arquibancada', 300.00, 300);
-
-DELETE FROM ingressos WHERE id = 2;
-
-DELETE FROM ingressos WHERE id = 3;
+('ColdPlay', 'Allianz Parque', '2025-12-01', 'Pista', 150.00, 1000),
+('ColdPlay', 'Allianz Parque', '2025-12-02', 'Pista Vip', 250.00, 200),
+('ColdPlay', 'Allianz Parque', '2025-12-03', 'Camarote', 350.00, 100),
+('ColdPlay', 'Allianz Parque', '2025-12-01', 'Arquibancada', 100.00, 400);
 
 DROP TABLE ingressos;
