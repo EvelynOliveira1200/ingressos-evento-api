@@ -4,10 +4,10 @@ API para gerenciamento de vendas de ingressos para eventos. Ele permite que os a
 
 ## 🚀 Tecnologias Utilizadas
 
-- [Node.js](https://nodejs.org/) (versão LTS recomendada)
-- [Express](https://expressjs.com/) para a estrutura do servidor
-- Banco de Dados ([PostgreSQL](https://www.postgresql.org/))
-- [Dotenv](https://www.npmjs.com/package/dotenv) para configuração de variáveis de ambiente
+- [Node.js](https://nodejs.org/) (versão LTS recomendada).
+- [Express](https://expressjs.com/) para a estrutura do servidor.
+- Banco de Dados ([PostgreSQL](https://www.postgresql.org/)).
+- [Dotenv](https://www.npmjs.com/package/dotenv) para configuração de variáveis de ambiente.
 
 ## 📌 Requisitos
 
@@ -31,7 +31,6 @@ Antes de iniciar, certifique-se de ter instalado:
 
    ```
    npm install
-
    ```
 
 3. Configure as variáveis de ambiente:
@@ -72,8 +71,9 @@ Antes de iniciar, certifique-se de ter instalado:
 | POST Venda | `/ingressos`  | Vende um Ingresso |
 | DELETE  | `/ingressos/:id` | Remove um ingresso |
 
-Mais informações sobre os métodos CRUD em [Postman](https://documenter.getpostman.com/view/41677719/2sAYkKJdn7)
 ----
+
+Mais informações sobre os métodos CRUD em [Postman](https://documenter.getpostman.com/view/41677719/2sAYkKJdn7)
 Criado por [Evelyn Oliveira](https://github.com/EvelynOliveira1200).
 
 
