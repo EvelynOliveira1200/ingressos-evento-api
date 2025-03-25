@@ -35,18 +35,20 @@ const deleteIngresso = async (id) => {
 };
 
 const vendaIngresso = async (id, quantidade) => {
-    const ingresso = await pool.query("SELECT * FROM ingressos WHERE id = $1", [id]);
-    if (ingresso.rowCount === 0) {
-        return { error: "Ingresso esgotado" };
+    const ingresso = await getIngressoById(id);
+    if (!ingresso) {
+        return { error: "Ingresso não encontrado" };
     }
-    if (ingresso.rows[0].quantidade_disponivel < quantidade) {
-        return { error: "Quantidade insuficiente de ingressos" };
+
+    if (ingresso.quantidade_disponivel <= 0) {
+        return { error: "Os inngressos para esse evento foram esgotados" };
     }
-    const updatedIngresso = await pool.query(
-        "UPDATE ingressos SET quantidade_disponivel = quantidade_disponivel - $1 WHERE id = $2 RETURNING *",
-        [quantidade, id]
+    
+    const result = await pool.query(
+        "UPDATE ingressos SET quantidade_disponivel = $1 WHERE id = $2 RETURNING *",
+        [ingresso.quantidade_disponivel - quantidade, id]
     );
-    return updatedIngresso.rows[0];
+    return result.rows[0];
 };
 
 module.exports = { getIngressos, getIngressoById, addIngresso, updateIngresso, deleteIngresso, vendaIngresso };

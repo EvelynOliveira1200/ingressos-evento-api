@@ -61,11 +61,8 @@ const deleteIngresso = async (req, res) => {
 const vendaIngresso = async (req, res) => {
     try {
         const { id, quantidade } = req.body;
-        const result = await ingressoModel.vendaIngresso(id, quantidade);
-        if (result.error) {
-            return res.status(400).json({ message: result.error });
-        }
-        res.json(result);
+        const updatedIngresso = await ingressoModel.vendaIngresso(id, quantidade);
+        res.json({message: "Ingresso vendido com sucesso.", ingresso: updatedIngresso});
     } catch (error) {
         res.status(404).json({ message: "Erro ao vender ingresso." });
     }
